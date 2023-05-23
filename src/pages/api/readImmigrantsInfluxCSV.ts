@@ -8,9 +8,9 @@ export default async function readImmigrantsInfluxCSV(
   res: NextApiResponse
 ) {
   try {
-    console.log("inside readImmigrantsInfluxCSV api");
-    console.log(req.method);
-    console.log(req.body);
+    // console.log("inside readImmigrantsInfluxCSV api");
+    // console.log(req.method);
+    // console.log(req.body);
     const labels = [];
     const numOfImmigrants = [];
     const percentageOfImmigrants = [];
@@ -20,19 +20,19 @@ export default async function readImmigrantsInfluxCSV(
       "utf8"
     );
 
-    console.log(response);
+    // console.log(response);
 
     const immigrationstats = response.split('\n')
-    console.log(immigrationstats.length)
+    // console.log(immigrationstats.length)
     for(let i=0;i<immigrationstats.length;i++){
-      console.log(immigrationstats[i].replace('\r','').split('\t'))
+      // console.log(immigrationstats[i].replace('\r','').split('\t'))
       labels.push(immigrationstats[i].replace('\r','').split('\t')[0])
       numOfImmigrants.push(immigrationstats[i].replace('\r','').split('\t')[1].replace(/,./g,''))
       percentageOfImmigrants.push(immigrationstats[i].replace('\r','').split('\t')[2])
     }
 
-    console.log(labels)
-    console.log(numOfImmigrants)
+    // console.log(labels)
+    // console.log(numOfImmigrants)
 
     // const filePath = path.join(
     //   process.cwd(),
