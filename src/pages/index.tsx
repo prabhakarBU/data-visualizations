@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import ImmigrantsInflux from "./immigrantsInflux";
 
-export default function Root() {
+export default function Index() {
   return (
     <>
       <Head>
-        <title>SneakerHead</title>
+        <title>
+          ImmigrantsInflux Data Visualization
+        </title>
       </Head>
       <ImmigrantsInflux />
     </>
